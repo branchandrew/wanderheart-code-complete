@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* WanderHeart text size variables */
+    --button-text: 1rem;
+    --h1: 3rem;
+    --h2: 2.94rem;
+    --h3: 2.06rem;
+    --h4: 2.06rem;
+    --h5: 1.38rem;
+    --body: 1rem;
+    --input-label: 1rem;
+    --form-placeholder: 1rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-wanderheart-midnight-sky text-wanderheart-parchment text-wh-body;
+  }
+  h1 {
+    @apply text-wh-h1;
+  }
+  h2 {
+    font-size: 47px;
+    line-height: 37px;
+    font-weight: 700;
+  }
+  h3 {
+    @apply text-wh-h3;
+  }
+  h4 {
+    @apply text-wh-h4;
+  }
+  h5 {
+    @apply text-wh-h5;
+  }
+  button,
+  .button {
+    @apply text-wh-button;
+  }
+  label {
+    @apply text-wh-input-label;
+  }
+  ::placeholder {
+    @apply text-wh-form-placeholder;
+  }
+  section {
+    border: none;
+  }
+  img {
+    display: block; /* Removes any potential space below images */
+  }
+}
+
+/* WanderHeart custom utility classes */
+@layer utilities {
+  .wh-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-wanderheart-mystery-plumb via-wanderheart-neon-water to-wanderheart-dull-pink;
+  }
+
+  .wh-card-bg {
+    @apply bg-wanderheart-nearing-midnight/80 backdrop-blur-sm;
+  }
+
+  .wh-button-primary {
+    @apply bg-gradient-to-r from-wanderheart-mystery-plumb to-wanderheart-red-sky-at-night hover:from-wanderheart-plumb hover:to-wanderheart-mystery-plumb text-wanderheart-parchment;
+  }
+
+  .wh-button-secondary {
+    @apply bg-transparent border border-wanderheart-neon-water text-wanderheart-neon-water hover:bg-wanderheart-neon-water/10;
+  }
+
+  /* Wild gradient - from dull pink to teal to purple */
+  .wh-gradient-wild {
+    @apply bg-gradient-to-r from-wanderheart-dull-pink via-[#01968E] to-[#8A84E2];
+  }
+
+  /* Text version of the wild gradient */
+  .wh-gradient-wild-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-wanderheart-dull-pink via-[#01968E] to-[#8A84E2];
+  }
+
+  /* Button with wild gradient */
+  .wh-button-wild {
+    @apply bg-gradient-to-r from-wanderheart-dull-pink via-[#01968E] to-[#8A84E2] hover:opacity-90 text-wanderheart-parchment;
+  }
+
+  /* Border with wild gradient */
+  .wh-border-wild {
+    @apply border-2 border-transparent bg-clip-border bg-gradient-to-r from-wanderheart-dull-pink via-[#01968E] to-[#8A84E2];
+  }
+
+  /* Sorbet gradient - from coral to purple */
+  .wh-gradient-sorbet {
+    @apply bg-gradient-to-r from-[#F07F6F] to-[#BE63B9];
+  }
+
+  /* Text version of the sorbet gradient */
+  .wh-gradient-sorbet-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#F07F6F] to-[#BE63B9];
+  }
+
+  /* Button with sorbet gradient */
+  .wh-button-sorbet {
+    @apply bg-gradient-to-r from-[#F07F6F] to-[#BE63B9] hover:opacity-90 text-wanderheart-parchment;
+  }
+
+  /* Border with sorbet gradient */
+  .wh-border-sorbet {
+    @apply border-2 border-transparent bg-clip-border bg-gradient-to-r from-[#F07F6F] to-[#BE63B9];
+  }
+
+  /* Watch Border gradient - from magenta to teal to indigo */
+  .wh-gradient-watch-border {
+    @apply bg-gradient-to-r from-[#A0519F] via-[#6FC7D6] to-[#714BD0];
+  }
+
+  /* Text version of the watch border gradient */
+  .wh-gradient-watch-border-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#A0519F] via-[#6FC7D6] to-[#714BD0];
+  }
+
+  /* Button with watch border gradient */
+  .wh-button-watch-border {
+    @apply bg-gradient-to-r from-[#A0519F] via-[#6FC7D6] to-[#714BD0] hover:opacity-90 text-wanderheart-parchment;
+  }
+
+  /* Border with watch border gradient */
+  .wh-border-watch-border {
+    @apply border-2 border-transparent bg-clip-border bg-gradient-to-r from-[#A0519F] via-[#6FC7D6] to-[#714BD0];
+  }
+
+  /* Animated border with watch border gradient */
+  .wh-animated-border-watch {
+    @apply relative;
+  }
+
+  .wh-animated-border-watch::before {
+    content: "";
+    @apply absolute inset-0 -z-10 p-[2px] rounded-[inherit] bg-gradient-to-r from-[#A0519F] via-[#6FC7D6] to-[#714BD0] animate-spin-slow;
+    animation: rotate 3s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* Join gradient - from blue to pink to coral to yellow */
+  .wh-gradient-join {
+    background-image: linear-gradient(to right, #00c3ff, #dc2e5a, #ef8467, #f6da71);
+  }
+
+  /* Text version of the join gradient */
+  .wh-gradient-join-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(to right, #00c3ff, #dc2e5a, #ef8467, #f6da71);
+  }
+
+  /* Button with join gradient */
+  .wh-button-join {
+    background-image: linear-gradient(to right, #00c3ff, #dc2e5a, #ef8467, #f6da71);
+    @apply hover:opacity-90 text-wanderheart-parchment;
+  }
+
+  /* Border with join gradient */
+  .wh-border-join {
+    @apply border-2 border-transparent bg-clip-border;
+    background-image: linear-gradient(to right, #00c3ff, #dc2e5a, #ef8467, #f6da71);
+  }
+
+  /* Animated border with join gradient */
+  .wh-animated-border-join {
+    @apply relative;
+  }
+
+  .wh-animated-border-join::before {
+    content: "";
+    @apply absolute inset-0 -z-10 p-[2px] rounded-[inherit] animate-gradient-shift;
+    background-image: linear-gradient(to right, #00c3ff, #dc2e5a, #ef8467, #f6da71);
+    background-size: 300% 100%;
+  }
+
+  /* Join gradient button with 1px border */
+  .join-button-border {
+    position: relative;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .join-button-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    padding: 1px;
+    background: linear-gradient(to right, #00c3ff, #dc2e5a, #ef8467, #f6da71);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+@layer components {
+  .wh-heading-1 {
+    @apply text-wh-h1 font-bold tracking-tight;
+  }
+
+  .wh-heading-2 {
+    font-size: 47px;
+    line-height: 37px;
+    font-weight: 700;
+  }
+
+  .wh-heading-3 {
+    @apply text-wh-h3 font-semibold;
+  }
+
+  .wh-heading-4 {
+    @apply text-wh-h4 font-semibold;
+  }
+
+  .wh-heading-5 {
+    @apply text-wh-h5 font-semibold;
+  }
+
+  .wh-body-text {
+    @apply text-wh-body;
+  }
+
+  .wh-button-text {
+    @apply text-wh-button font-medium;
+  }
+
+  .wh-input-label {
+    @apply text-wh-input-label font-medium;
+  }
+}
